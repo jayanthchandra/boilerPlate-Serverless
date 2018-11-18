@@ -1,0 +1,7 @@
+GetUser:
+  handler: handlers/user/get.handler
+  events:
+    - http:
+        path: api/v1/user/{userId}
+        method: get
+        cors: true

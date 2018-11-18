@@ -1,0 +1,7 @@
+LoginAuth:
+  handler: handlers/login.handler
+  events:
+    - http:
+        path: api/v1/login/{mobileno}
+        method: get
+        cors: true
