@@ -1,0 +1,15 @@
+service: MY-AWESOME-APPLICATION
+provider:
+  name: aws
+  runtime: nodejs8.10
+  role: <MY_AWS_ARN>
+resources:
+  Resources:
+    ApiGatewayRestApi:
+      Type: AWS::ApiGateway::RestApi
+      Properties:
+        Name: <COOL_API_NAME>
+
+functions:
+  - '${file(handlers/common.serverless.yml)}'
+  - '${file(handlers/user/user.serverless.yml)}'
